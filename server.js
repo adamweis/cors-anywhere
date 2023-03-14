@@ -45,8 +45,10 @@ cors_proxy.createServer({
     xfwd: false,
   },
   handleInitialRequest: {
-    function(){
-      console.log('test');
+    function(req, res, location){
+      console.log(req);
+      console.log(res);
+      console.log(location);
     }
   },
 }).listen(port, host, function() {
